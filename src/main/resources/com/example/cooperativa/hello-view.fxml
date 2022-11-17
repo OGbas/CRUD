@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<VBox fx:id="tw" alignment="CENTER" opacity="0.92" prefHeight="516.0" prefWidth="563.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cooperativa.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <TabPane prefHeight="432.0" prefWidth="497.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Agricultor">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="414.0">
+                     <children>
+                        <TableView fx:id="twAgricultores" layoutX="1.0" layoutY="-1.0" prefHeight="238.0" prefWidth="523.0">
+                          <columns>
+                            <TableColumn fx:id="colIdAgr" prefWidth="31.5" text="ID" />
+                            <TableColumn fx:id="colNombreAgr" prefWidth="84.5" text="Nombre" />
+                              <TableColumn fx:id="colDniAgr" prefWidth="140.5" text="Dni" />
+                              <TableColumn fx:id="colFechaAgr" prefWidth="151.5" text="Fecha de nacimiento" />
+                              <TableColumn fx:id="colDirAgr" prefWidth="114.0" text="Direccion" />
+                          </columns>
+                           <effect>
+                              <Glow level="0.0" />
+                           </effect>
+                        </TableView>
+                        <TextField fx:id="txtNombreAgr" layoutX="11.0" layoutY="245.0" promptText="Nombre" />
+                        <TextField fx:id="txtDireccionAgr" layoutX="11.0" layoutY="341.0" promptText="Dirección" />
+                        <TextField fx:id="txtFechaAgr" layoutX="11.0" layoutY="308.0" promptText="Fecha de nacimiento" />
+                        <TextField fx:id="txtDniAgr" layoutX="11.0" layoutY="277.0" promptText="Dni" />
+                        <Button fx:id="btnAdd" layoutX="394.0" layoutY="258.0" mnemonicParsing="false" onAction="#onBtnAdd" text="Añadir" />
+                        <Button fx:id="btnModificar" disable="true" layoutX="385.0" layoutY="296.0" mnemonicParsing="false" onAction="#onBtnModificar" text="Modificar" />
+                        <Button fx:id="btnEliminar" disable="true" layoutX="388.0" layoutY="341.0" mnemonicParsing="false" onAction="#onBtnEliminar" text="Eliminar" />
+                        <TextField fx:id="txtIdAgr" layoutX="332.0" layoutY="296.0" prefHeight="25.0" prefWidth="42.0" promptText="ID" />
+                     </children>
+                     <effect>
+                        <Glow level="0.0" />
+                     </effect>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Producto">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="414.0">
+                     <children>
+                        <TableView fx:id="twProductos" layoutX="1.0" layoutY="-1.0" prefHeight="234.0" prefWidth="523.0">
+                           <columns>
+                              <TableColumn fx:id="colIdPr" prefWidth="31.5" text="ID" />
+                              <TableColumn fx:id="colNombrePr" prefWidth="221.5" text="Nombre" />
+                              <TableColumn fx:id="colVarPr" prefWidth="194.5" text="Variedad" />
+                              <TableColumn fx:id="colCalPr" prefWidth="74.5" text="Calibre" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="txtNombreFr" layoutX="11.0" layoutY="245.0" promptText="Nombre" />
+                        <TextField fx:id="txtCalibreFr" layoutX="11.0" layoutY="308.0" promptText="Calibre" />
+                        <TextField fx:id="txtVariedadFr" layoutX="11.0" layoutY="277.0" promptText="Variedad" />
+                        <Button fx:id="btnAddFr" layoutX="397.0" layoutY="258.0" mnemonicParsing="false" onAction="#onBtnAddFr" text="Añadir" />
+                        <Button fx:id="btnModificarFr" disable="true" layoutX="388.0" layoutY="296.0" mnemonicParsing="false" onAction="#OnBtnModificarFr" text="Modificar" />
+                        <Button fx:id="btnEliminarFr" disable="true" layoutX="391.0" layoutY="343.0" mnemonicParsing="false" onAction="#onBtniEliminarFr" text="Eliminar" />
+                        <TextField fx:id="txtIdPr" layoutX="337.0" layoutY="296.0" prefHeight="25.0" prefWidth="43.0" promptText="ID" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Consulta Producto">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="414.0">
+                     <children>
+                        <TableView fx:id="twConProducto" layoutX="1.0" layoutY="-1.0" prefHeight="234.0" prefWidth="523.0">
+                           <columns>
+                              <TableColumn fx:id="colIdConPr" prefWidth="58.0" text="ID" />
+                              <TableColumn fx:id="colNombreConPr" prefWidth="189.5" text="Nombre" />
+                              <TableColumn fx:id="colVarConPr" prefWidth="178.5" text="Variedad" />
+                              <TableColumn fx:id="colCalConPr" prefWidth="96.0" text="Calibre" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="txtClaveFr" layoutX="14.0" layoutY="258.0" promptText="Introduce palabra clave" />
+                        <Button fx:id="btnBuscarFr" layoutX="204.0" layoutY="258.0" mnemonicParsing="false" onAction="#onBtniBuscarFr" text="Buscar" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Consulta Agricultor">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="414.0">
+                     <children>
+                        <TableView fx:id="twConsultaAgr" layoutX="1.0" layoutY="-1.0" prefHeight="234.0" prefWidth="523.0">
+                           <columns>
+                              <TableColumn fx:id="colIdConAgr" prefWidth="31.5" text="ID" />
+                              <TableColumn fx:id="colNombreConAgr" prefWidth="97.0" text="Nombre" />
+                              <TableColumn fx:id="colDniConAgr" prefWidth="92.0" text="Dni" />
+                              <TableColumn fx:id="colFechaConAgr" prefWidth="161.0" text="Fecha de nacimiento" />
+                              <TableColumn fx:id="colDirConAgr" prefWidth="140.5" text="Direccion" />
+                           </columns>
+                           <effect>
+                              <Glow level="0.0" />
+                           </effect>
+                        </TableView>
+                        <TextField fx:id="txtClaveAgr" layoutX="14.0" layoutY="258.0" promptText="Introduce palabra clave" />
+                        <Button fx:id="btnBuscarAgr" layoutX="204.0" layoutY="258.0" mnemonicParsing="false" onAction="#onBtnBuscarAgr" text="Buscar" />
+                     </children>
+                     <effect>
+                        <Glow level="0.0" />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Entradas">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="414.0">
+                     <children>
+                        <TableView fx:id="twEntradas" layoutX="1.0" layoutY="-1.0" prefHeight="238.0" prefWidth="523.0">
+                           <columns>
+                              <TableColumn fx:id="colIdEntrada" prefWidth="31.5" text="ID" />
+                              <TableColumn fx:id="colNombreAgricultorEntrada" prefWidth="84.5" text="Nombre" />
+                              <TableColumn fx:id="colNombreProductoEntrada" prefWidth="140.5" text="Producto" />
+                              <TableColumn fx:id="colFechaEntrada" prefWidth="151.5" text="Fecha entrada" />
+                              <TableColumn fx:id="colKilosEntrada" prefWidth="114.0" text="Kilos" />
+                           </columns>
+                           <effect>
+                              <Glow level="0.0" />
+                           </effect>
+                        </TableView>
+                        <TextField fx:id="txtFechaEntrada" layoutX="11.0" layoutY="245.0" promptText="Fecha" />
+                        <TextField fx:id="txtKgEntrada" layoutX="11.0" layoutY="341.0" promptText="Kgs" />
+                        <TextField fx:id="txtIdProductoEntrada" layoutX="11.0" layoutY="308.0" promptText="id_producto" />
+                        <TextField fx:id="txtIdAgricultorEntradas" layoutX="11.0" layoutY="277.0" promptText="id_agricultor" />
+                        <Button fx:id="btnAddEntrada" layoutX="394.0" layoutY="258.0" mnemonicParsing="false" onAction="#onBtnAddEntrada" text="Añadir" />
+                        <Button fx:id="btnModificarEntrada" disable="true" layoutX="385.0" layoutY="296.0" mnemonicParsing="false" onAction="#onBtnModificarEntrada" text="Modificar" />
+                        <Button fx:id="btnEliminarEntrada" disable="true" layoutX="388.0" layoutY="341.0" mnemonicParsing="false" onAction="#onBtnEliminarEntrada" text="Eliminar" />
+                        <TextField fx:id="txtIdEntrada" layoutX="332.0" layoutY="296.0" prefHeight="25.0" prefWidth="42.0" promptText="ID" />
+                     </children>
+                     <effect>
+                        <Glow level="0.0" />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+         <effect>
+            <DropShadow height="28.37" offsetX="5.0" offsetY="5.0" radius="11.4725" spread="0.26" width="19.52">
+               <color>
+                  <Color red="0.013050000183284283" green="0.0044999998062849045" blue="0.09000000357627869" opacity="0.43021032214164734" />
+               </color>
+            </DropShadow>
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TabPane>
+   </children>
+   <effect>
+      <DropShadow height="135.96" radius="68.22" spread="0.36" width="138.92">
+         <color>
+            <Color red="0.0018274853937327862" green="0.0028935184236615896" blue="0.06578947603702545" />
+         </color>
+      </DropShadow>
+   </effect>
+</VBox>
